@@ -47,7 +47,7 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="brand"><span class="dot"></span> tri-risk <span class="badge">API</span></div>
+      <div class="brand"><span class="dot"></p> tri-risk <span class="badge">API</p></div>
       <nav>
         <a href="#product">продукт</a>
         <a href="#how">как работает</a>
@@ -85,7 +85,7 @@
       <p class="sub">Пример: часть полей неизвестна → получаем <b>M</b> и список, что нужно добрать.</p>
 
       <div class="split">
-        <pre>curl -X POST http://127.0.0.1:7444/v1/risk \
+        <pre>curl -X POST https://api.tri-risk.dev/v1/risk \
   -H "X-API-Key: pro_key_999" \
   -H "Content-Type: application/json" \
   -d '{
@@ -109,12 +109,11 @@
 
       <h2 id="docs">Документация</h2>
       <div class="row">
-        <a class="btn ghost" href="http://127.0.0.1:7444/v1/docs" target="_blank" rel="noreferrer">/v1/docs</a>
-        <a class="btn ghost" href="http://127.0.0.1:7444/v1/openapi.json" target="_blank" rel="noreferrer">/v1/openapi.json</a>
-        <a class="btn ghost" href="http://127.0.0.1:7444/v1/usage" target="_blank" rel="noreferrer">/v1/usage</a>
+        <a class="btn ghost" href="https://api.tri-risk.dev/v1/docs" target="_blank" rel="noreferrer">/v1/docs</a>
+        <a class="btn ghost" href="https://api.tri-risk.dev/v1/openapi.json" target="_blank" rel="noreferrer">/v1/openapi.json</a>
+        <a class="btn ghost" href="https://api.tri-risk.dev/v1/usage" target="_blank" rel="noreferrer">/v1/usage</a>
       </div>
-      <p class="tiny">На проде эти ссылки будут на твоём домене. Сейчас они указывают на локальный proxy 7444.</p>
-    </section>
+      </section>
 
     <section id="pricing" style="margin-top:34px">
       <h2>Прозрачные тарифы</h2>
@@ -150,27 +149,7 @@
         </div>
       </div>
 
-      <p class="tiny">Оплата: СБП на номер +79630546266 (Тинькофф). После оплаты пришлите чек в Telegram, и мы выдадим API-ключ. СБП на номер +7XXXXXXXXXX (Тинькофф). После оплаты пришлите чек в Telegram, и мы выдадим API-ключ. СБП на номер +7XXXXXXXXXX (Тинькофф). После оплаты пришлите чек в Telegram, и мы выдадим API-ключ. позже подключим ЮKassa/CloudPayments для РФ. Сейчас делаем релиз и сбор лидов.</p>
-    </section>
-
-    <section id="getkey" style="margin-top:34px">
-      <h2>Получить ключ</h2>
-      <p class="sub">MVP: собираем лиды. Дальше авто-выдача ключей через no-code (Make/Zapier) или свой endpoint.</p>
-
-      <div class="panel">
-        <label>Имя</label>
-        <input placeholder="Денис" />
-        <label>Email</label>
-        <input placeholder="denis@example.com" />
-        <label>План</label>
-        <select>
-          <option>Dev</option><option selected>Pro</option><option>Business</option>
-        </select>
-        <label>Сценарий</label>
-        <textarea placeholder="Где будете использовать tri-risk? (скоринг, antifraud, KYC, модерация…)"></textarea>
-        <div class="row" style="margin-top:12px">
-          <a class="btn primary" href="https://t.me/DenVorGK?text=%D0%A5%D0%BE%D1%87%D1%83%20API-%D0%BA%D0%BB%D1%8E%D1%87%20tri-risk.%0A%D0%9F%D0%BB%D0%B0%D0%BD%3A%20PRO%0AEmail%3A%0A%D0%AE%D0%B7%D0%BA%D0%B5%D0%B9%D1%81%3A%20%D1%81%D0%BA%D0%BE%D1%80%D0%B8%D0%BD%D0%B3/antifraud/KYC%0A" target="_blank" rel="noopener">Написать в Telegram</a>
-          <span class="tiny">Оплата: СБП на номер +79630546266 (Тинькофф). После оплаты пришлите чек в Telegram, и мы выдадим API-ключ. СБП на номер +7XXXXXXXXXX (Тинькофф). После оплаты пришлите чек в Telegram, и мы выдадим API-ключ. СБП на номер +7XXXXXXXXXX (Тинькофф). После оплаты пришлите чек в Telegram, и мы выдадим API-ключ. СБП/карта по ссылке. Ключ выдаём в Telegram за 2 минуты.<br>После оплаты пришлите чек/скрин в Telegram, и мы пришлём API-ключ.</span>
+      <p class="tiny">Оплата: СБП на номер +79630546266 (Тинькофф). После оплаты пришлите чек в Telegram, и мы выдадим API-ключ.</p>
         </div>
       </div>
     </section>
@@ -178,8 +157,8 @@
     <footer>
       <div>tri-risk • 0/M/1 • 2026</div>
       <div class="row">
-        <span class="tiny">Контакт: <u>hello@tri-risk.dev</u></span>
-        <span class="tiny">GitHub: <u>denis17934/tri-lang</u></span>
+        <span class="tiny">Контакт: <u>hello@tri-risk.dev</u></p>
+        <span class="tiny">GitHub: <u>denis17934/tri-lang</u></p>
       </div>
     </footer>
   </div>
