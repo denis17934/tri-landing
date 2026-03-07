@@ -1,5 +1,4 @@
-<!doctype<div id="example"></div>
- html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8"/>
@@ -151,8 +150,108 @@ a, button { pointer-events: auto !important; }
       </div>
       </section>
 
+    <section class="section" id="loop">
+      <h2>Как M превращается в 0 или 1</h2>
+      <p class="sub">
+        tri-risk сам не “добывает данные”. Он честно возвращает <b>M</b> (unknown) и <b>need_list</b> (что дослать).
+        Дальше ваш процесс (бот/CRM/интеграция) запрашивает недостающее и повторяет запрос, пока решение не станет <b>0</b> или <b>1</b>.
+      </p>
+
+<pre class="code"><code>цикл
+1) отправили факты → tri-risk
+2) получили decision=M + need_list
+3) запросили недостающее → повторили
+… пока decision не станет 0 или 1</code></pre>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Кейс 1: возврат страховой премии</h3>
+<pre class="code"><code>INPUT
+{ "policy": "ok", "statement": null }
+
+OUTPUT
+{ "decision": "M", "need_list": ["statement"] }</code></pre>
+        </div>
+
+        <div class="card">
+          <h3>Кейс 2: меддокумент</h3>
+<pre class="code"><code>INPUT
+{ "stamp": false, "signature": true, "date": true }
+
+OUTPUT
+{ "decision": "0", "label": "нет печати медучреждения" }</code></pre>
+        </div>
+
+        <div class="card">
+          <h3>Кейс 3: скоринг (кредит/страховка)</h3>
+<pre class="code"><code>INPUT
+{ "income": "M", "history": "M", "age": 1 }
+
+OUTPUT
+{ "decision": "M", "need_list": ["income","history"] }</code></pre>
+          <p class="sub">если данных мало — возвращаем M и need_list (что дослать)</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Чем отличается от “просто tribool”</h3>
+          <p>
+            tribool — это тип данных внутри вашего кода. tri-risk — это <b>операционный сервис</b>:
+            правила + объяснение + <b>need_list</b> + единый HTTP API для команд и интеграций.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Для кого</h3>
+          <p>
+            Страховые, финтех, комплаенс, продажи, саппорт — везде где решение часто упирается в “не хватает данных”.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Что вы получите</h3>
+          <p>
+            Быстрое решение <b>0/1</b> когда данных хватает и честное <b>M</b> + список что запросить, когда данных не хватает.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+
     <section id="pricing" style="margin-top:34px">
-      <h2>Прозрачные тарифы</h2>
+      
+    <section class="section" id="faq">
+      <h2>FAQ</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Почему M — это не “50/50”</h3>
+          <p>
+            M = <b>unknown</b>: данных недостаточно для решения. Это не вероятность и не “почти да”.
+            Мы сохраняем неопределённость, чтобы не принимать ложных решений.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Кто “дособирает” данные</h3>
+          <p>
+            tri-risk сам не ходит за документами. Он возвращает <b>need_list</b>.
+            Дальше ваш процесс (бот/CRM/интеграция) запрашивает недостающее и повторяет запрос.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Чем отличается от tribool/таблиц решений</h3>
+          <p>
+            tribool — тип данных в коде. tri-risk — <b>сервис</b>: правила + объяснение + need_list + HTTP API,
+            чтобы быстро встраивать в команды и процессы.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <h2>Прозрачные тарифы</h2>
       <p class="sub">Стартуем с простых планов, плюхи дороже. Маленькие платежи лучше одного большого.</p>
 
       <div class="pricing">
