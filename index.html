@@ -80,7 +80,8 @@ a, button { pointer-events: auto !important; }
 
 </head>
 <body>
-  <div class="wrap">
+  
+<div class="wrap">
     <header>
       <div class="brand"><span class="dot"></span> tri-risk <span class="badge">API</span></div>
       <nav>
@@ -92,7 +93,38 @@ a, button { pointer-events: auto !important; }
       <a class="btn primary" href="https://t.me/triRiskKeyforge_bot?start=lead" target="_blank" rel="noopener">Получить ключ</a>
     </header>
 
-    <section class="hero" id="product">
+    
+<!-- TRI_V1_BUSINESS_BLOCK -->
+<section style="max-width:900px;margin:40px auto;padding:24px;border:1px solid rgba(255,255,255,.12);border-radius:16px;">
+  <h2 style="margin:0 0 12px;">Решения при неполных данных, без гаданий</h2>
+  <p style="margin:0 0 12px;">tri-risk возвращает не «да/нет наугад», а честное <b>M (не хватает данных)</b> и <b>need_list</b> — что именно дослать, чтобы получить 0 или 1.</p>
+
+  <h3 style="margin:18px 0 8px;">Как работает</h3>
+  <ol style="margin:0 0 12px;padding-left:18px;">
+    <li>Отправляете то, что есть</li>
+    <li>Если данных мало — получаете M + need_list</li>
+    <li>Досылаете только нужное → получаете 0/1</li>
+  </ol>
+
+  <h3 style="margin:18px 0 8px;">Кому особенно полезно</h3>
+  <ul style="margin:0 0 12px;padding-left:18px;">
+    <li>Страховые: выплаты/возвраты — «не хватает документов» это ежедневка</li>
+    <li>Финтех/скоринг: данные приходят кусками, нужен честный цикл досбора</li>
+    <li>Комплаенс/проверка документов: быстро 0/1 или M + что дослать</li>
+  </ul>
+
+  <h3 style="margin:18px 0 8px;">Пилот</h3>
+  <p style="margin:0 0 16px;">Пилот <b>7 дней</b> + наша поддержка. Настроим 3 правила и покажем эффект на ваших кейсах (время досбора, доля M→0/1).</p>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="https://t.me/triRiskKeyforge_bot" style="padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);text-decoration:none;">Попробовать демо в Telegram</a>
+    <a href="https://github.com/denis17934/tri-lang" style="padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);text-decoration:none;">Документация / README</a>
+  </div>
+</section>
+
+
+
+<section class="hero" id="product">
       <div class="kicker">0 / M / 1 • M = неизвестно (и это ок)</div>
       <h1>Троичные риск-решения<br/>для реальных данных</h1>
       <p class="sub">
@@ -257,7 +289,7 @@ OUTPUT
       <div class="pricing">
         <div class="card">
           <div class="badge">Dev</div>
-          <div class="price">299 ₽<span class="tiny">/мес</span></div>
+          <div class="price">2 900 ₽<span class="tiny">/мес</span></div>
           <ul>
             <li>5 rps</li>
             <li>Песочница</li>
@@ -266,7 +298,7 @@ OUTPUT
         </div>
         <div class="card" style="border-color:#111">
           <div class="badge">Pro</div>
-          <div class="price">1490 ₽<span class="tiny">/мес</span></div>
+          <div class="price">9 900 ₽<span class="tiny">/мес</span></div>
           <ul>
             <li>20 rps</li>
             <li>/v1/usage статистика</li>
@@ -275,7 +307,7 @@ OUTPUT
         </div>
         <div class="card">
           <div class="badge">Business</div>
-          <div class="price">4990 ₽<span class="tiny">/мес</span></div>
+          <div class="price">14 900 ₽<span class="tiny">/мес</span></div><div style="margin-top:6px;font-size:12px;opacity:.7">первые 3 месяца, далее 29 900 ₽/мес</div>
           <ul>
             <li>100 rps</li>
             <li>Кастомные лимиты</li>
